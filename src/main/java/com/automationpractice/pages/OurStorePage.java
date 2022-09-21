@@ -3,7 +3,9 @@ package com.automationpractice.pages;
 import com.automationpractice.utility.Utility;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
@@ -37,18 +39,29 @@ public class OurStorePage extends Utility {
         clickOnElement(okButton);
     }
 
-    public void drag() {
+    public void scrollMapToSeeWestPalmBeach(){
 
-        new Actions(driver).moveToElement(map, 0, 0).clickAndHold().moveByOffset(300, 0).release().build().perform();
-        clickOnElement(zoomOut);
+       mouseHoverToElement(map);
+        Actions actions = new Actions(driver);
+        Action movement = actions.moveToElement(map)
+                .clickAndHold()
+                .moveToElement(map, -100, -670)
+                .release(map)
+                .build();
+        movement.perform();
     }
 
-    public void zoom1() {
-        clickOnElement(zoomOut);
+    public void scrollPageDown() {
+        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        jse.executeScript("scroll(0, 500);");
     }
 
-
-    public void getScreenshot() {
-        Utility.takeScreenShot();
+    public void takeScreenshot(){
+        takeScreenShot("OurStores Screenshot");
     }
 }
+
+
+
+
+

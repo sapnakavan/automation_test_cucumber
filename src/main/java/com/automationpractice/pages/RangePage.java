@@ -28,6 +28,7 @@ public class RangePage extends Utility {
         System.out.println(sliderRange.getLocation());
         Actions actions = new Actions(driver);
         actions.dragAndDropBy(sliderRange, -182, 0).perform();
+
     }
 
     public String verifyPriceRange() {
