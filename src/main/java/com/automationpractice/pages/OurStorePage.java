@@ -20,7 +20,7 @@ public class OurStorePage extends Utility {
     @FindBy(xpath = "//a[contains(text(),'Our stores')]")
     WebElement ourstore;
     @CacheLookup
-    @FindBy(xpath = "//button[normalize-space()='OK']")
+    @FindBy(xpath = "//button[contains(text(),'OK')]")
     WebElement okButton;
     @CacheLookup
     @FindBy(xpath = "//div[@id='map']")

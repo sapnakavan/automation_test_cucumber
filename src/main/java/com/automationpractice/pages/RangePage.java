@@ -17,7 +17,7 @@ public class RangePage extends Utility {
     }
 
     @CacheLookup
-    @FindBy(xpath = "//body/div[@id='page']/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/form[1]/div[1]/div[9]/ul[1]/div[1]/div[1]/a[2]")////div[@id='layered_price_slider']//a[2]
+    @FindBy(xpath = "//ul[@id='ul_layered_price_0']")
     WebElement sliderRange;
 
     @CacheLookup
