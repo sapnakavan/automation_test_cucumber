@@ -18,16 +18,12 @@ public class OurStorePage extends Utility {
         PageFactory.initElements(driver, this);
     }
 
-    @CacheLookup
     @FindBy(xpath = "//a[contains(text(),'Our stores')]")
     WebElement ourstore;
-    @CacheLookup
-    @FindBy(xpath = "//button[contains(text(),'OK')]")
+    @FindBy(xpath = "//button[normalize-space()='OK']")
     WebElement okButton;
-    @CacheLookup
     @FindBy(xpath = "//div[@id='map']")
     WebElement map;
-    @CacheLookup
     @FindBy(xpath = "//button[@title='Zoom out']")
     WebElement zoomOut;
 
@@ -38,6 +34,8 @@ public class OurStorePage extends Utility {
     public void clickokpopup() {
         clickOnElement(okButton);
     }
+
+
 
     public void drag() {
 
@@ -51,10 +49,5 @@ public class OurStorePage extends Utility {
 
 
     public void getScreenshot(){
-        Utility.takeScreenShot();
-    }
-}
-
-
-
-
+        Utility.takeScreenShot(map);
+    }}

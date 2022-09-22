@@ -314,7 +314,7 @@ public class Utility extends ManageDriver {
     /**
      * This method will take screenshot
      */
-    public static void takeScreenShot() {
+    public static void takeScreenShot(WebElement map) {
         String filePath = System.getProperty("user.dir") + "/src/main/java/com/automationpractice/screenshots/";
         TakesScreenshot screenshot = (TakesScreenshot) driver;
         File scr1 = screenshot.getScreenshotAs(OutputType.FILE);
