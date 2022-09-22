@@ -10,7 +10,7 @@ public class pricerangesteps {
 
 
     @And("^I select slider to change price$")
-    public void iSelectSliderToChangePrice() {
+    public void iSelectSliderToChangePrice() throws InterruptedException {
         new RangePage().selectSliderPriceRange();
     }
 

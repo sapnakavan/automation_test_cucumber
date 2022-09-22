@@ -16,17 +16,17 @@ public class OurStoreSteps {
 
     @And("^moves the map to be able to view a store from West Palm Beach$")
     public void movesTheMapToBeAbleToViewAStoreFromWestPalmBeach() {
-        new OurStorePage().scrollMapToSeeWestPalmBeach();
+        new OurStorePage().drag();
     }
 
     @And("^scrolls the map for a clear view$")
     public void scrollsTheMapForAClearView() {
-        new OurStorePage().scrollPageDown();
+        new OurStorePage().zoom1();
     }
 
     @Then("^takes a screenshot for future reference$")
     public void takesAScreenshotForFutureReference() {
-        new OurStorePage().takeScreenshot();
+        new OurStorePage().getScreenshot();
     }
 
     @Given("^User clicks on the link from the homepage Our Stores$")

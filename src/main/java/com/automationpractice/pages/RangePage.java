@@ -17,17 +17,19 @@ public class RangePage extends Utility {
     }
 
     @CacheLookup
-    @FindBy(xpath = "//ul[@id='ul_layered_price_0']")
+    @FindBy(xpath = "//div[@id='left_column']//a[2]")
     WebElement sliderRange;
 
     @CacheLookup
     @FindBy(xpath = "//span[@id='layered_price_range']")
     WebElement priceText;
 
-    public void selectSliderPriceRange() {
+    public void selectSliderPriceRange() throws InterruptedException {
         System.out.println(sliderRange.getLocation());
         Actions actions = new Actions(driver);
         actions.dragAndDropBy(sliderRange, -182, 0).perform();
+        Thread.sleep(3000);
+        System.out.println(sliderRange.getLocation());
 
     }
 

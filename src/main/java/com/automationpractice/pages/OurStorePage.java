@@ -39,28 +39,21 @@ public class OurStorePage extends Utility {
         clickOnElement(okButton);
     }
 
-    public void scrollMapToSeeWestPalmBeach(){
+    public void drag() {
 
-       mouseHoverToElement(map);
-        Actions actions = new Actions(driver);
-        Action movement = actions.moveToElement(map)
-                .clickAndHold()
-                .moveToElement(map, -100, -670)
-                .release(map)
-                .build();
-        movement.perform();
+        new Actions(driver).moveToElement(map, 0, 0).clickAndHold().moveByOffset(300, 0).release().build().perform();
+        clickOnElement(zoomOut);
     }
 
-    public void scrollPageDown() {
-        JavascriptExecutor jse = (JavascriptExecutor)driver;
-        jse.executeScript("scroll(0, 500);");
+    public void zoom1() {
+        clickOnElement(zoomOut);
     }
 
-    public void takeScreenshot(){
-        takeScreenShot("OurStores Screenshot");
+
+    public void getScreenshot(){
+        Utility.takeScreenShot();
     }
 }
-
 
 
 
